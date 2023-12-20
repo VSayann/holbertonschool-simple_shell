@@ -9,15 +9,13 @@
 
 void Read_user_input(char **line, size_t *len)
 {
-    /* Read the user line input */
-    if (getline(line, len, stdin) == -1)
-    {
-        if (feof(stdin))
-        {
-            printf("\n");
-            exit(EXIT_SUCCESS); /*Exit gracefully on Ctrl+D (end of file) */
-        }
-        perror("getline");
-        exit(EXIT_FAILURE);
-    }
+
+	/* Read the user line input */
+	if (getline(line, len, stdin) == -1)
+	{
+		perror("getline");
+		exit(EXIT_FAILURE);
+	}
+
+
 }

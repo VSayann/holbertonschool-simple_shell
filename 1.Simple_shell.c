@@ -10,25 +10,21 @@
 
 int main(void)
 {
-    char *line = NULL;
-    size_t len = 0;
-    char *command;
+	char *line = NULL;
+	size_t len = 0;
+	char *command;
 
-    while (1)
-    {
-        print_prompt();
-        Read_user_input(&line, &len);
-        Remove_newline(line);
-        Tokenize_input(line, &command);
 
-        if (Execute_command(command) == -1)
-        {
-            fprintf(stderr, "Error executing command: %s\n", command);
-        }
-    }
+	while (1)
+	{
+		print_prompt();
+		Read_user_input(&line, &len);
+		Remove_newline(line);
+		Tokenize_input(line, &command);
+		Execute_command(command);
+	}
 
-    free(line);
+	free(line);
 
-    return 0;
+	return (0);
 }
-
