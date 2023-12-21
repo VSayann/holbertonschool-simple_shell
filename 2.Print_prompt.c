@@ -8,5 +8,4 @@ void print_prompt(void)
 {
 	*/ need test here isaty */
 	printf("$ ");
-	fflush(stdout);
 }
