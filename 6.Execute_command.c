@@ -6,43 +6,24 @@
 * @command: Command given by user
 */
 
-void Execute_command(char *command)
+void execute_command(char **tokens)
 {
-	pid_t pid;
-	int status;
+    pid_t pid;
+    int status;
 
-	pid = fork();
-	if (pid == -1)
-	{
-		perror("fork");
-		exit(EXIT_FAILURE);
-	}
+    pid = fork();
+    if (pid == -1) {
+        perror("fork");
+        exit(EXIT_FAILURE);
+    } else if (pid == 0) {
 
-	else if (pid == 0) /* Child process */
-	{
-		char **argv = malloc(2 * sizeof(char *));
+        execvp(tokens[0], tokens);
 
-		if (argv == NULL)
-		{
-			perror("malloc");
-			exit(EXIT_FAILURE);
-		}
-		argv[0] = command;
-		argv[1] = NULL;
 
-		/* Execute the command */
-		if (execvp(command, argv) == -1)
-		{
-			perror("execvp");
-			exit(EXIT_FAILURE);
-		}
+        perror("execvp");
+        exit(EXIT_FAILURE);
+    } else {
 
-		free(argv);
-	}
-
-	else /* Parent process */
-	{
-		wait(&status);
-	}
-
+        waitpid(pid, &status, 0);
+    }
 }
