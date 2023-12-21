@@ -16,11 +16,7 @@ int main(void)
 
 	while (1)
 	{
-	if (isatty(fileno(stdout)))
-	{
-	printf("$ ");
-	fflush(stdout);
-	}
+		print_prompt();
 		Read_user_input(&line, &len);
 		Tokenize_input(line, &command);
 		Execute_command(command);
