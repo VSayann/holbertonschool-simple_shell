@@ -7,4 +7,5 @@
 void print_prompt(void)
 {
 	printf("$ ");
+	fflush(stdout);
 }
