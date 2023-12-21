@@ -19,7 +19,6 @@ int main(void)
 	{
 		print_prompt();
 		Read_user_input(&line, &len);
-		Remove_newline(line);
 		Tokenize_input(line, &command);
 		Execute_command(command);
 	}
@@ -28,3 +27,4 @@ int main(void)
 
 	return (0);
 }
+
