@@ -6,6 +6,10 @@
 
 void print_prompt(void)
 {
-	*/ need test here isaty */
+	if (isatty(fileno(stdout)))
+	{
 	printf("$ ");
+	fflush(stdout);
+	}
 }
+
