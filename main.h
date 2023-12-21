@@ -8,9 +8,10 @@
 #include <sys/wait.h>
 
 void print_prompt(void);
-void read_user_input(char **line, size_t *len);
-void tokenize_input(char *line, char **tokens, size_t *num_tokens);
-void execute_command(char **tokens);
+void Read_user_input(char **line, size_t *len);
+void Tokenize_input(char *line, char **command);
+void Execute_command(char *command);
 void Remove_newline(char *str);
+
 
 #endif

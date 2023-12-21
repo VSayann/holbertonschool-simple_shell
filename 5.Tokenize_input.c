@@ -8,13 +8,10 @@
 * @command: First token save in this variable
 */
 
-void tokenize_input(char *line, char **tokens, size_t *num_tokens)
+void Tokenize_input(char *line, char **command)
 {
-	char *token = NULL;
-    *num_tokens = 0;
-    token = strtok(line, " ");
-    while (token != NULL && *num_tokens < 64) {
-        tokens[(*num_tokens)++] = token;
-        token = strtok(NULL, " ");
-    }
+	/* Tokenize the input into command and arguments */
+	char *token = strtok(line, " \n");
+
+	*command = token;
 }

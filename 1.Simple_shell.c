@@ -7,27 +7,26 @@
 */
 
 
-
 int main(void)
 {
-    char *line = NULL;
-    size_t len = 0;
-    char *tokens[1024];
-    size_t num_tokens;
+	char *line = NULL;
+	size_t len = 0;
+	char *command;
 
-    while (1)
+
+	while (1)
 	{
-        print_prompt();
-        read_user_input(&line, &len);
+	if (isatty(fileno(stdout)))
+	{
+	printf("$ ");
+	fflush(stdout);
+	}
+		Read_user_input(&line, &len);
+		Tokenize_input(line, &command);
+		Execute_command(command);
+	}
 
-        if (strlen(line) > 0) {
-            tokenize_input(line, tokens, &num_tokens);
-            if (num_tokens > 0) {
-                execute_command(tokens);
-            }
-        }
-    }
+	free(line);
 
-    free(line);
-    return 0;
+	return (0);
 }

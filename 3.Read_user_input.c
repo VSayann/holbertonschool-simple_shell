@@ -7,20 +7,15 @@
 * @len: size of the buffer
 */
 
-void read_user_input(char **line, size_t *len)
+void Read_user_input(char **line, size_t *len)
 {
-	   size_t input_length;
-    if (getline(line, len, stdin) == -1) {
-        if (feof(stdin)) {
-            printf("\n");
-            exit(EXIT_SUCCESS);
-        } else {
-            perror("getline");
-            exit(EXIT_FAILURE);
-        }
-    }
-   	input_length = strlen(*line);
-    if (input_length > 0 && (*line)[input_length - 1] == '\n') {
-        (*line)[input_length - 1] = '\0';
-    }
+
+	/* Read the user line input */
+	if (getline(line, len, stdin) == -1)
+	{
+		perror("getline");
+		exit(EXIT_FAILURE);
+	}
+
+
 }
