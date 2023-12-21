@@ -11,7 +11,7 @@
 void Tokenize_input(char *line, char **command)
 {
 	/* Tokenize the input into command and arguments */
-	char *token = strtok(line, " \n");
+	char *token = strtok(line, " ");
 
 	*command = token;
 }
