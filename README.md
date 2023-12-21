@@ -68,5 +68,5 @@ hsh main.c shell.c test_ls_2
 
 ## Authors
 
-Sayann Valmond <sayann.valmond@holbertonstudents.com> \n
+Sayann Valmond <sayann.valmond@holbertonstudents.com>
 François Gosselin <gosselin.francois@holbertonstudents.com>
