@@ -26,8 +26,6 @@ This project implements a simple shell in C that supports basic command executio
 ## Requirements
 
 - Allowed editors: vi, vim, emacs
-- Compiled on Ubuntu 20.04 LTS using gcc with options `-Wall -Werror -Wextra -pedantic -std=gnu89`
-- Follows the Betty style using `betty-style.pl` and `betty-doc.pl`
 - No memory leaks
 - No more than 5 functions per file
 - All header files include guarded
