@@ -6,12 +6,15 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <sys/types.h>
+#include <ctype.h>
 
-void print_prompt(void);
-void Read_user_input(char **line, size_t *len);
-void Tokenize_input(char *line, char **command);
-void Execute_command(char *command);
-void Remove_newline(char *str);
+char *trim(char *str);
+int is_space(int c);
+char **tokenize(char *input);
+char *getPath(char *input);
+int execute(char *input);
 
+extern char **environ;
 
 #endif
