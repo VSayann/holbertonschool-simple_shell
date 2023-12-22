@@ -4,7 +4,7 @@
 * Description: Display the prompt that invite user to interact whith the shell
 */
 
-void print_prompt(void)
+void print_prompt()
 {
 	if (isatty(fileno(stdout)))
 	{
